@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lahore Innovations | Tech Startup</title>
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary: #2c3e50; /* Deep Blue */
+            --accent: #e74c3c;  /* Startup Red */
+            --light: #ecf0f1;
+            --dark: #333;
+            --padding-std: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--padding-std);
+        }
+
+        /* --- HEADER & NAVIGATION (The Responsive Logic) --- */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column; /* MOBILE DEFAULT: Stack Vertically */
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem; /* Space between logo and links on mobile */
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column; /* MOBILE DEFAULT: Vertical Stack */
+            gap: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- SECTIONS --- */
+        .hero {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem; /* Vertical spacing without <br> */
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .services {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        /* GRID SYSTEM (Flexbox Fallback) */
+        .service-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            flex: 1 1 300px; /* Grow, Shrink, Basis 300px */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+
+        /* --- DESKTOP VIEW (The "Twist") --- 
+           @media query targeting screens larger than 768px (Tablets/Laptops)
+        */
+        @media (min-width: 768px) {
+            .navbar {
+                flex-direction: row; /* Switch to Horizontal */
+                justify-content: space-between;
+                padding: 1rem 2rem;
+            }
+
+            .logo {
+                margin-bottom: 0; /* Remove mobile spacing */
+            }
+
+            .nav-links {
+                flex-direction: row; /* Switch links to Horizontal */
+                width: auto;
+                gap: 2rem;
+            }
+
+            .hero {
+                padding: 6rem 1rem; /* More breathing room on desktop */
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Lahore Innovations</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Solutions</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Building the Future from Gulberg</h1>
+                <p>We craft scalable digital solutions for Pakistan's growing tech ecosystem.</p>
+                <a href="#contact" class="cta-button">Launch Project</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Expertise</h2>
+                <div class="service-grid">
+                    <article class="service-card">
+                        <h3>Web Development</h3>
+                        <p>Responsive, semantic websites built with modern standards and zero hacks.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Cloud Solutions</h3>
+                        <p>Scalable infrastructure management for high-traffic applications.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>UI/UX Design</h3>
+                        <p>User-centric interfaces that flow like water across all devices.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Lahore Innovations. Made with Semantic HTML & Flexbox.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
