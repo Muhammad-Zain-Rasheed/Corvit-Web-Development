@@ -1,0 +1,33 @@
+/* Basic Reset to ensure we control the spacing fully */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.post-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+.post-date {
+    display: block;
+    color: #777;
+    margin-bottom: 40px; /* Space between date and first paragraph */
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+/* THE REQUIREMENT: Exactly 50px space between paragraphs */
+.post-content {
+    margin-bottom: 50px; 
+}
+/* PRO TIP: Remove the margin from the very last paragraph 
+   so it doesn't create unwanted space at the bottom of the article. */
+.post-content:last-of-type {
+    margin-bottom: 0;
+}
