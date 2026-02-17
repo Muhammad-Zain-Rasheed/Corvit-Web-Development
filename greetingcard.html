@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fluid Greeting Card</title>
+<style>
+  /* BASE STYLES 
+     Using 'vh' (viewport height) to center the card vertically.
+  */
+  body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Take up full screen height */
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f0f4f8;
+  }
+
+  /* THE CARD 
+     Default State (Mobile): 90% Width
+     Constraint Checklist:
+     - No px for width/height? CHECK (Using %)
+     - No px for padding? CHECK (Using rem)
+  */
+  .card {
+    width: 90%;              /* Mobile Requirement */
+    background: white;
+    padding: 2rem;           /* Spacing scales with font settings */
+    border-radius: 1rem;     /* Smooth corners */
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+  }
+
+  /* THE SWITCH (Laptop/Desktop)
+     When the screen is wider than 48rem (approx 768px),
+     switch to the 50% requirement.
+  */
+  @media (min-width: 48rem) {
+    .card {
+      width: 50%; /* Laptop Requirement */
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <article class="card">
+    <h1>Happy Birthday!</h1>
+    <p>
+      Wishing you a day filled with happiness and a year filled with joy. 
+      Resize this window to see how I adapt to any screen size without breaking!
+    </p>
+  </article>
+
+</body>
+</html>
